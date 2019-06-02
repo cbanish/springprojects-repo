@@ -2,6 +2,7 @@ package com.spring.stock.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -10,12 +11,20 @@ import javax.persistence.Table;
 public class Quote {
 	
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 	
 	private String username;
 	
 	private String quote;
+	
+	public Quote() {}
+	
+	public Quote(String username, String quote) {
+		super();
+		this.username = username;
+		this.quote = quote;
+	}
 
 	public Integer getId() {
 		return id;
