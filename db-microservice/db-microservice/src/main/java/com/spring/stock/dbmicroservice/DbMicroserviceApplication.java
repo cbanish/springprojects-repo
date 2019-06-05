@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
+
 @SpringBootApplication
 @EnableJpaRepositories(basePackages="com.spring.stock")
 @EntityScan(basePackages = {"com.spring.stock"})

@@ -5,3 +5,16 @@ eureka:
     service-url:
       defaultZone: http://localhost:8070/eureka
     
+zuul:
+  host:
+    connect-timeout-millis: 20000
+    socket-timeout-millis: 60000
+  prefix: /api
+  routes:
+    db-microservice:
+      path: /db-service/**
+      url: http://localhost:8300 
+    stock-microservice:
+      path: /stock-service/**
+      url: http://localhost:8301
+     
